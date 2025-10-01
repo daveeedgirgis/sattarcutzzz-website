@@ -2,7 +2,7 @@ import Image from "next/image";
 import MobileMenu from "@/components/MobileMenu";
 import MovingReviewsCarousel from "@/components/MovingReviewsCarousel";
 import InstagramCarousel from "@/components/InstagramCarousel";
-import CutsGallery from "@/components/CutsGallery";
+import MovingCutsCarousel from "@/components/MovingCutsCarousel";
 
 export default function Home() {
   return (
@@ -32,12 +32,18 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 to-black py-24 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 text-6xl">💈</div>
-          <div className="absolute top-32 right-20 text-4xl">🪒</div>
-          <div className="absolute bottom-20 left-32 text-5xl">💈</div>
-          <div className="absolute bottom-32 right-10 text-3xl">🪒</div>
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          {/* Moving gradient orbs */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-blue-500/15 to-teal-500/15 rounded-full blur-lg animate-bounce" style={{animationDuration: '3s'}}></div>
+          <div className="absolute bottom-32 left-32 w-40 h-40 bg-gradient-to-r from-teal-500/10 to-purple-500/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-xl animate-bounce" style={{animationDuration: '4s', animationDelay: '0.5s'}}></div>
+          
+          {/* Floating particles */}
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-ping" style={{animationDuration: '2s'}}></div>
+          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{animationDuration: '3s', animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-white/25 rounded-full animate-ping" style={{animationDuration: '2.5s', animationDelay: '0.5s'}}></div>
         </div>
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -69,30 +75,64 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-900">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Services & Pricing</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center hover:border-gray-600 transition-colors">
-              <h3 className="text-2xl font-semibold mb-4">Haircut</h3>
-              <div className="text-3xl font-bold mb-4">$25</div>
-              <p className="text-gray-400">Consultation included where the perfect haircut will be catered for the client</p>
+      <section id="services" className="py-20 bg-gray-900 relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 text-6xl">✂️</div>
+          <div className="absolute bottom-10 right-10 text-6xl">🪒</div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Services & Pricing</h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">Professional cuts at affordable prices. Every service includes consultation and styling.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Main Services */}
+            <div className="bg-gradient-to-br from-gray-800 to-black border border-gray-700 rounded-2xl p-8 text-center hover:border-gray-500 hover:from-gray-700 hover:to-gray-900 transition-all duration-300 group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">✂️</div>
+              <h3 className="text-2xl font-bold mb-2">Haircut</h3>
+              <div className="text-4xl font-bold text-white mb-4">$25</div>
+              <p className="text-gray-400 leading-relaxed">Full consultation included where the perfect haircut will be catered for the client</p>
+              <div className="mt-6 pt-6 border-t border-gray-700">
+                <span className="text-sm text-gray-500">Most Popular Choice</span>
+              </div>
             </div>
-            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center hover:border-gray-600 transition-colors">
-              <h3 className="text-2xl font-semibold mb-4">Haircut + Beard</h3>
-              <div className="text-3xl font-bold mb-4">$30</div>
-              <p className="text-gray-400">Elegantly planned out Haircut matched with a beard cut of clients choosing</p>
+            
+            <div className="bg-gradient-to-br from-gray-800 to-black border border-gray-700 rounded-2xl p-8 text-center hover:border-gray-500 hover:from-gray-700 hover:to-gray-900 transition-all duration-300 group">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🪒</div>
+              <h3 className="text-2xl font-bold mb-2">Haircut + Beard</h3>
+              <div className="text-4xl font-bold text-white mb-4">$30</div>
+              <p className="text-gray-400 leading-relaxed">Complete package with elegantly planned haircut matched with beard styling of your choice</p>
+              <div className="mt-6 pt-6 border-t border-gray-700">
+                <span className="text-sm text-gray-500">Best Value</span>
+              </div>
             </div>
-            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center hover:border-gray-600 transition-colors">
-              <h3 className="text-2xl font-semibold mb-4">Line Ups</h3>
-              <div className="text-3xl font-bold mb-4">$15</div>
-              <p className="text-gray-400">Strictly for all lineups done with either a trimmer or a razor</p>
+            
+            {/* Additional Services */}
+            <div className="bg-black border border-gray-800 rounded-xl p-6 text-center hover:border-gray-600 transition-all duration-300">
+              <h3 className="text-xl font-semibold mb-2">Line Ups</h3>
+              <div className="text-2xl font-bold mb-3">$15</div>
+              <p className="text-gray-400 text-sm">Precision line ups with trimmer or razor</p>
             </div>
-            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center hover:border-gray-600 transition-colors">
-              <h3 className="text-2xl font-semibold mb-4">After Hours</h3>
-              <div className="text-3xl font-bold mb-4">$40</div>
-              <p className="text-gray-400">Available 10pm to 2am, by arrangement</p>
+            
+            <div className="bg-black border border-gray-800 rounded-xl p-6 text-center hover:border-gray-600 transition-all duration-300">
+              <h3 className="text-xl font-semibold mb-2">After Hours</h3>
+              <div className="text-2xl font-bold mb-3">$40</div>
+              <p className="text-gray-400 text-sm">Available 10pm-2am by arrangement</p>
             </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <a 
+              href="https://sattarcutzzz.setmore.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+            >
+              Book Your Appointment
+            </a>
           </div>
         </div>
       </section>
@@ -100,8 +140,8 @@ export default function Home() {
       {/* Instagram Posts Section */}
       <InstagramCarousel />
 
-      {/* Cuts Gallery Section */}
-      <CutsGallery />
+      {/* Moving Cuts Carousel */}
+      <MovingCutsCarousel />
 
       {/* Reviews Section */}
       <section id="reviews" className="py-20 bg-black">

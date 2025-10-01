@@ -2,37 +2,37 @@
 
 import { useState, useEffect } from 'react';
 
-// Real Instagram posts with actual cut images
+// Real Instagram posts with actual video URLs
 const instagramPosts = [
   {
     id: 1,
-    type: 'image',
+    type: 'video',
     thumbnail: '/cut1.png',
     caption: 'Fresh braided style transformation 🔥 Precision work and clean finish',
     likes: 47,
     comments: 8,
-    videoUrl: '#',
-    isVideo: false
+    videoUrl: 'https://www.instagram.com/p/DMJCi9CRrwJ/',
+    isVideo: true
   },
   {
     id: 2,
-    type: 'image', 
+    type: 'video', 
     thumbnail: '/cut2.png',
     caption: 'Expert fade technique ✂️ Perfect blend and sharp lines',
     likes: 35,
     comments: 5,
-    videoUrl: '#',
-    isVideo: false
+    videoUrl: 'https://www.instagram.com/p/DOZKSIKiZrJ/',
+    isVideo: true
   },
   {
     id: 3,
-    type: 'image',
+    type: 'video',
     thumbnail: '/cut3.png', 
     caption: 'Classic taper cut with modern twist 💯 Always delivering quality',
     likes: 62,
     comments: 12,
-    videoUrl: '#',
-    isVideo: false
+    videoUrl: 'https://www.instagram.com/p/DHLRkTfRXhf/',
+    isVideo: true
   }
 ];
 
@@ -109,8 +109,20 @@ export default function InstagramCarousel() {
 
               {/* Instagram-style overlay */}
               <div className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-lg px-2 py-1">
-                <div className="text-white text-sm">📷</div>
+                <div className="text-white text-sm">🎥</div>
               </div>
+              
+              {/* Click to view on Instagram */}
+              <a 
+                href={currentPost.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 group"
+              >
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-70 rounded-full p-4">
+                  <div className="text-white text-2xl">▶️</div>
+                </div>
+              </a>
               
               {/* Instagram-style gradient overlay at bottom */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent h-24 pointer-events-none"></div>
@@ -130,12 +142,12 @@ export default function InstagramCarousel() {
                   </button>
                 </div>
                 <a 
-                  href="https://www.instagram.com/sattarcutzzz" 
+                  href={currentPost.videoUrl} 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  View on Instagram →
+                  Watch on Instagram →
                 </a>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
