@@ -81,7 +81,7 @@ export default function MovingReviewsCarousel() {
 
     animationId = requestAnimationFrame(animate);
 
-    // Pause on hover
+    // Pause on hover (desktop) and touch (mobile)
     const handleMouseEnter = () => {
       cancelAnimationFrame(animationId);
     };
@@ -90,13 +90,25 @@ export default function MovingReviewsCarousel() {
       animationId = requestAnimationFrame(animate);
     };
 
+    const handleTouchStart = () => {
+      cancelAnimationFrame(animationId);
+    };
+
+    const handleTouchEnd = () => {
+      animationId = requestAnimationFrame(animate);
+    };
+
     scrollContainer.addEventListener('mouseenter', handleMouseEnter);
     scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+    scrollContainer.addEventListener('touchstart', handleTouchStart);
+    scrollContainer.addEventListener('touchend', handleTouchEnd);
 
     return () => {
       cancelAnimationFrame(animationId);
       scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
       scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+      scrollContainer.removeEventListener('touchstart', handleTouchStart);
+      scrollContainer.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 
@@ -143,9 +155,6 @@ export default function MovingReviewsCarousel() {
         <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-black to-transparent pointer-events-none"></div>
       </div>
 
-      <div className="text-center mt-8">
-        <p className="text-gray-500 text-sm">Hover to pause • Continuous scroll</p>
-      </div>
     </div>
   );
 }

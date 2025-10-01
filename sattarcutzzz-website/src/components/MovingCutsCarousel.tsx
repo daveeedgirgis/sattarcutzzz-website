@@ -76,7 +76,7 @@ export default function MovingCutsCarousel() {
 
     animationId = requestAnimationFrame(animate);
 
-    // Pause on hover
+    // Pause on hover (desktop) and touch (mobile)
     const handleMouseEnter = () => {
       cancelAnimationFrame(animationId);
     };
@@ -85,13 +85,25 @@ export default function MovingCutsCarousel() {
       animationId = requestAnimationFrame(animate);
     };
 
+    const handleTouchStart = () => {
+      cancelAnimationFrame(animationId);
+    };
+
+    const handleTouchEnd = () => {
+      animationId = requestAnimationFrame(animate);
+    };
+
     scrollContainer.addEventListener('mouseenter', handleMouseEnter);
     scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+    scrollContainer.addEventListener('touchstart', handleTouchStart);
+    scrollContainer.addEventListener('touchend', handleTouchEnd);
 
     return () => {
       cancelAnimationFrame(animationId);
       scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
       scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+      scrollContainer.removeEventListener('touchstart', handleTouchStart);
+      scrollContainer.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 

@@ -252,7 +252,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="text-2xl font-bold mb-4">SattarCutZZZ</div>
           <p className="text-gray-400 mb-4">Expert cuts in Burlington, Ontario</p>
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-6 mb-6">
             <a 
               href="https://www.instagram.com/sattarcutzzz" 
               target="_blank"
@@ -275,6 +275,19 @@ export default function Home() {
             >
               Call
             </a>
+          </div>
+          <div className="border-t border-gray-800 pt-4">
+            <p className="text-gray-500 text-sm">
+              Website created by{' '}
+              <a 
+                href="https://www.linkedin.com/in/davidgirgis2020/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors underline"
+              >
+                David Girgis
+              </a>
+            </p>
           </div>
         </div>
       </footer>
