@@ -1,7 +1,7 @@
 import Image from "next/image";
 import MobileMenu from "@/components/MobileMenu";
-import ReviewsCarousel from "@/components/ReviewsCarousel";
-import ImageGallery from "@/components/ImageGallery";
+import MovingReviewsCarousel from "@/components/MovingReviewsCarousel";
+import InstagramCarousel from "@/components/InstagramCarousel";
 
 export default function Home() {
   return (
@@ -32,11 +32,11 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 to-black py-24 overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">✂️</div>
-          <div className="absolute top-32 right-20 text-4xl">💈</div>
-          <div className="absolute bottom-20 left-32 text-5xl">🪒</div>
-          <div className="absolute bottom-32 right-10 text-3xl">✂️</div>
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 text-6xl">💈</div>
+          <div className="absolute top-32 right-20 text-4xl">🪒</div>
+          <div className="absolute bottom-20 left-32 text-5xl">💈</div>
+          <div className="absolute bottom-32 right-10 text-3xl">🪒</div>
         </div>
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -96,14 +96,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <ImageGallery />
+      {/* Instagram Posts Section */}
+      <InstagramCarousel />
 
       {/* Reviews Section */}
       <section id="reviews" className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">What Clients Say</h2>
-          <ReviewsCarousel />
+          <MovingReviewsCarousel />
         </div>
       </section>
 
