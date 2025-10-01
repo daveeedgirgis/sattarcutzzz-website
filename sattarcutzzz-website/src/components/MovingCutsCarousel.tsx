@@ -140,7 +140,6 @@ export default function MovingCutsCarousel() {
         </div>
 
         <div className="text-center mt-8">
-          <p className="text-gray-500 text-sm mb-4">Hover to pause • Continuous scroll</p>
           <div className="flex justify-center items-center gap-2 text-gray-400">
             <span className="text-xl">📱</span>
             <span>Follow @sattarcutzzz for more</span>

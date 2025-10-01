@@ -1,7 +1,6 @@
 import Image from "next/image";
 import MobileMenu from "@/components/MobileMenu";
 import MovingReviewsCarousel from "@/components/MovingReviewsCarousel";
-import InstagramCarousel from "@/components/InstagramCarousel";
 import MovingCutsCarousel from "@/components/MovingCutsCarousel";
 
 export default function Home() {
@@ -152,9 +151,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Instagram Posts Section */}
-      <InstagramCarousel />
 
       {/* Moving Cuts Carousel */}
       <MovingCutsCarousel />
