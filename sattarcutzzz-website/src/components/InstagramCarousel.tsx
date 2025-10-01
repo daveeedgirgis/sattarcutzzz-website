@@ -65,9 +65,6 @@ export default function InstagramCarousel() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Latest Work</h2>
-          <p className="text-xl text-gray-300 mb-6">
-            Check out our pinned videos showcasing the freshest cuts and transformations
-          </p>
           <a 
             href="https://www.instagram.com/sattarcutzzz" 
             target="_blank"
@@ -194,23 +191,6 @@ export default function InstagramCarousel() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <div className="bg-black border border-gray-800 rounded-lg p-6 max-w-lg mx-auto">
-            <h3 className="text-xl font-semibold mb-3">Ready to Add Your Videos?</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              Replace these placeholders with your actual pinned Instagram videos to showcase your best work automatically.
-            </p>
-            <a 
-              href="https://www.instagram.com/sattarcutzzz" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-md font-semibold hover:from-purple-600 hover:to-pink-600 transition-colors text-sm"
-            >
-              Get Video URLs from Instagram
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -75,61 +75,77 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-900 relative">
-        {/* Background decoration */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 text-6xl">✂️</div>
-          <div className="absolute bottom-10 right-10 text-6xl">🪒</div>
-        </div>
-        
-        <div className="max-w-6xl mx-auto px-6 relative">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Services & Pricing</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">Professional cuts at affordable prices. Every service includes consultation and styling.</p>
+      <section id="services" className="py-16 bg-gray-900">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Services & Pricing</h2>
+            <p className="text-gray-300 max-w-xl mx-auto">Professional cuts at affordable prices. Every service includes consultation.</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Main Services */}
-            <div className="bg-gradient-to-br from-gray-800 to-black border border-gray-700 rounded-2xl p-8 text-center hover:border-gray-500 hover:from-gray-700 hover:to-gray-900 transition-all duration-300 group">
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">✂️</div>
-              <h3 className="text-2xl font-bold mb-2">Haircut</h3>
-              <div className="text-4xl font-bold text-white mb-4">$25</div>
-              <p className="text-gray-400 leading-relaxed">Full consultation included where the perfect haircut will be catered for the client</p>
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <span className="text-sm text-gray-500">Most Popular Choice</span>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-gray-800 to-black border border-gray-700 rounded-2xl p-8 text-center hover:border-gray-500 hover:from-gray-700 hover:to-gray-900 transition-all duration-300 group">
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🪒</div>
-              <h3 className="text-2xl font-bold mb-2">Haircut + Beard</h3>
-              <div className="text-4xl font-bold text-white mb-4">$30</div>
-              <p className="text-gray-400 leading-relaxed">Complete package with elegantly planned haircut matched with beard styling of your choice</p>
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <span className="text-sm text-gray-500">Best Value</span>
-              </div>
-            </div>
-            
-            {/* Additional Services */}
-            <div className="bg-black border border-gray-800 rounded-xl p-6 text-center hover:border-gray-600 transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-2">Line Ups</h3>
-              <div className="text-2xl font-bold mb-3">$15</div>
-              <p className="text-gray-400 text-sm">Precision line ups with trimmer or razor</p>
-            </div>
-            
-            <div className="bg-black border border-gray-800 rounded-xl p-6 text-center hover:border-gray-600 transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-2">After Hours</h3>
-              <div className="text-2xl font-bold mb-3">$40</div>
-              <p className="text-gray-400 text-sm">Available 10pm-2am by arrangement</p>
+          {/* Pricing Table */}
+          <div className="bg-black border border-gray-800 rounded-2xl overflow-hidden max-w-2xl mx-auto">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-gray-800 border-b border-gray-700">
+                    <th className="text-left py-4 px-6 font-semibold text-white">Service</th>
+                    <th className="text-center py-4 px-6 font-semibold text-white">Price</th>
+                    <th className="text-right py-4 px-6 font-semibold text-white">Duration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-800 hover:bg-gray-900 transition-colors">
+                    <td className="py-4 px-6">
+                      <div className="font-semibold text-white">Haircut</div>
+                      <div className="text-sm text-gray-400">Consultation included, perfect cut catered for client</div>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <div className="text-xl font-bold text-white">$25</div>
+                    </td>
+                    <td className="py-4 px-6 text-right text-gray-400">45 min</td>
+                  </tr>
+                  <tr className="border-b border-gray-800 hover:bg-gray-900 transition-colors">
+                    <td className="py-4 px-6">
+                      <div className="font-semibold text-white">Haircut + Beard</div>
+                      <div className="text-sm text-gray-400">Complete package with beard styling of your choice</div>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <div className="text-xl font-bold text-white">$30</div>
+                      <div className="text-xs text-green-400">Best Value</div>
+                    </td>
+                    <td className="py-4 px-6 text-right text-gray-400">60 min</td>
+                  </tr>
+                  <tr className="border-b border-gray-800 hover:bg-gray-900 transition-colors">
+                    <td className="py-4 px-6">
+                      <div className="font-semibold text-white">Line Ups</div>
+                      <div className="text-sm text-gray-400">Precision line ups with trimmer or razor</div>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <div className="text-xl font-bold text-white">$15</div>
+                    </td>
+                    <td className="py-4 px-6 text-right text-gray-400">20 min</td>
+                  </tr>
+                  <tr className="hover:bg-gray-900 transition-colors">
+                    <td className="py-4 px-6">
+                      <div className="font-semibold text-white">After Hours</div>
+                      <div className="text-sm text-gray-400">Available 10pm-2am by arrangement</div>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <div className="text-xl font-bold text-white">$40</div>
+                    </td>
+                    <td className="py-4 px-6 text-right text-gray-400">45 min</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-8">
             <a 
               href="https://sattarcutzzz.setmore.com/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+              className="inline-block bg-white text-black px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition-colors"
             >
               Book Your Appointment
             </a>
