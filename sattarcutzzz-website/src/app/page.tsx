@@ -1,5 +1,7 @@
 import Image from "next/image";
 import MobileMenu from "@/components/MobileMenu";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
+import ImageGallery from "@/components/ImageGallery";
 
 export default function Home() {
   return (
@@ -28,7 +30,14 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 to-black py-24">
+      <section className="relative bg-gradient-to-br from-gray-900 to-black py-24 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 text-6xl">✂️</div>
+          <div className="absolute top-32 right-20 text-4xl">💈</div>
+          <div className="absolute bottom-20 left-32 text-5xl">🪒</div>
+          <div className="absolute bottom-32 right-10 text-3xl">✂️</div>
+        </div>
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Expert Cuts in
@@ -87,48 +96,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <ImageGallery />
+
       {/* Reviews Section */}
       <section id="reviews" className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">What Clients Say</h2>
-          <div className="text-center mb-16">
-            <div className="flex justify-center items-center gap-2 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="text-yellow-400 text-2xl">★</div>
-              ))}
-              <span className="text-xl font-semibold ml-2">5.0/5</span>
-            </div>
-            <p className="text-gray-400">Based on 25+ reviews</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="text-yellow-400">★</div>
-                ))}
-              </div>
-              <p className="text-gray-300 mb-4">&quot;I got a great haircut from Sattar. Best customer service I&apos;ve ever had. He really helped me figure out how I want to cut my hair, and explained everything really well. Highly recommend.&quot;</p>
-              <div className="font-semibold">- Rayan</div>
-            </div>
-            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="text-yellow-400">★</div>
-                ))}
-              </div>
-              <p className="text-gray-300 mb-4">&quot;An amazing connection made with this barber where i know he&apos;ll commit his time and effort into each minute of the cut. You can see his passion throughout the whole cut.&quot;</p>
-              <div className="font-semibold">- Shaheer</div>
-            </div>
-            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="text-yellow-400">★</div>
-                ))}
-              </div>
-              <p className="text-gray-300 mb-4">&quot;Chill vibes and smooth service — clean, fresh cut, quick and easy, wrapped up right on time.&quot;</p>
-              <div className="font-semibold">- Amro</div>
-            </div>
-          </div>
+          <ReviewsCarousel />
         </div>
       </section>
 
