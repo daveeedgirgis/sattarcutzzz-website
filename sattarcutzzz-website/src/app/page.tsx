@@ -1,102 +1,251 @@
 import Image from "next/image";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-black text-white">
+      {/* Header */}
+      <header className="bg-black border-b border-gray-800 relative">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="text-2xl font-bold">SattarCutZZZ</div>
+          <nav className="hidden md:flex space-x-8">
+            <a href="#services" className="hover:text-gray-300 transition-colors">Services</a>
+            <a href="#reviews" className="hover:text-gray-300 transition-colors">Reviews</a>
+            <a href="#contact" className="hover:text-gray-300 transition-colors">Contact</a>
+          </nav>
+          <div className="flex items-center gap-4">
+            <a 
+              href="https://sattarcutzzz.setmore.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:block bg-white text-black px-6 py-2 rounded-md font-semibold hover:bg-gray-200 transition-colors"
+            >
+              Book Now
+            </a>
+            <MobileMenu />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-gray-900 to-black py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Expert Cuts in
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+              Burlington
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Top-notch grooming meets expert service. Solo barber and taper specialist offering a personal, luxurious experience.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="https://sattarcutzzz.setmore.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-200 transition-colors"
+            >
+              Book Appointment
+            </a>
+            <a 
+              href="tel:(289) 938-6660"
+              className="border border-white text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-white hover:text-black transition-colors"
+            >
+              Call (289) 938-6660
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-gray-900">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Services & Pricing</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center hover:border-gray-600 transition-colors">
+              <h3 className="text-2xl font-semibold mb-4">Haircut</h3>
+              <div className="text-3xl font-bold mb-4">$25</div>
+              <p className="text-gray-400">Consultation included where the perfect haircut will be catered for the client</p>
+            </div>
+            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center hover:border-gray-600 transition-colors">
+              <h3 className="text-2xl font-semibold mb-4">Haircut + Beard</h3>
+              <div className="text-3xl font-bold mb-4">$30</div>
+              <p className="text-gray-400">Elegantly planned out Haircut matched with a beard cut of clients choosing</p>
+            </div>
+            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center hover:border-gray-600 transition-colors">
+              <h3 className="text-2xl font-semibold mb-4">Line Ups</h3>
+              <div className="text-3xl font-bold mb-4">$15</div>
+              <p className="text-gray-400">Strictly for all lineups done with either a trimmer or a razor</p>
+            </div>
+            <div className="bg-black border border-gray-800 rounded-lg p-6 text-center hover:border-gray-600 transition-colors">
+              <h3 className="text-2xl font-semibold mb-4">After Hours</h3>
+              <div className="text-3xl font-bold mb-4">$40</div>
+              <p className="text-gray-400">Available 10pm to 2am, by arrangement</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section id="reviews" className="py-20 bg-black">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">What Clients Say</h2>
+          <div className="text-center mb-16">
+            <div className="flex justify-center items-center gap-2 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="text-yellow-400 text-2xl">★</div>
+              ))}
+              <span className="text-xl font-semibold ml-2">5.0/5</span>
+            </div>
+            <p className="text-gray-400">Based on 25+ reviews</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="text-yellow-400">★</div>
+                ))}
+              </div>
+              <p className="text-gray-300 mb-4">&quot;I got a great haircut from Sattar. Best customer service I&apos;ve ever had. He really helped me figure out how I want to cut my hair, and explained everything really well. Highly recommend.&quot;</p>
+              <div className="font-semibold">- Rayan</div>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="text-yellow-400">★</div>
+                ))}
+              </div>
+              <p className="text-gray-300 mb-4">&quot;An amazing connection made with this barber where i know he&apos;ll commit his time and effort into each minute of the cut. You can see his passion throughout the whole cut.&quot;</p>
+              <div className="font-semibold">- Shaheer</div>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="text-yellow-400">★</div>
+                ))}
+              </div>
+              <p className="text-gray-300 mb-4">&quot;Chill vibes and smooth service — clean, fresh cut, quick and easy, wrapped up right on time.&quot;</p>
+              <div className="font-semibold">- Amro</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gray-900">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Get In Touch</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6">Contact Info</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="text-xl">📍</div>
+                  <div>
+                    <div className="font-semibold">Location</div>
+                    <div className="text-gray-400">Burlington, Ontario</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="text-xl">📞</div>
+                  <div>
+                    <div className="font-semibold">Phone</div>
+                    <a href="tel:(289) 938-6660" className="text-gray-400 hover:text-white transition-colors">
+                      (289) 938-6660
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="text-xl">📧</div>
+                  <div>
+                    <div className="font-semibold">Email</div>
+                    <a href="mailto:abdulsattar4red@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                      abdulsattar4red@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="text-xl">📱</div>
+                  <div>
+                    <div className="font-semibold">Instagram</div>
+                    <a 
+                      href="https://www.instagram.com/sattarcutzzz" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      @sattarcutzzz
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-6">Hours</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span>Monday - Friday</span>
+                  <span className="text-gray-400">3 PM - 10 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Saturday</span>
+                  <span className="text-gray-400">11 AM - 11:59 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Sunday</span>
+                  <span className="text-gray-400">11 AM - 11:59 PM</span>
+                </div>
+                <div className="mt-6 p-4 bg-black border border-gray-800 rounded-lg">
+                  <div className="font-semibold mb-2">After Hours Available</div>
+                  <div className="text-gray-400 text-sm">10 PM - 2 AM by arrangement ($40)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <a 
+              href="https://sattarcutzzz.setmore.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-200 transition-colors inline-block"
+            >
+              Book Your Appointment
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black border-t border-gray-800 py-8">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <div className="text-2xl font-bold mb-4">SattarCutZZZ</div>
+          <p className="text-gray-400 mb-4">Expert cuts in Burlington, Ontario</p>
+          <div className="flex justify-center gap-6">
+            <a 
+              href="https://www.instagram.com/sattarcutzzz" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Instagram
+            </a>
+            <a 
+              href="https://sattarcutzzz.setmore.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Book Online
+            </a>
+            <a 
+              href="tel:(289) 938-6660"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Call
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
