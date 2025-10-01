@@ -2,37 +2,37 @@
 
 import { useState, useEffect } from 'react';
 
-// Simulated Instagram posts data (replace with actual content)
+// Real Instagram posts with actual cut images
 const instagramPosts = [
   {
     id: 1,
-    type: 'video',
-    thumbnail: '/api/placeholder/400/400',
-    caption: 'Fresh fade transformation 🔥 Clean lines and perfect blend',
+    type: 'image',
+    thumbnail: '/cut1.png',
+    caption: 'Fresh braided style transformation 🔥 Precision work and clean finish',
     likes: 47,
     comments: 8,
-    videoUrl: '#', // Would be actual video URL
-    isVideo: true
+    videoUrl: '#',
+    isVideo: false
   },
   {
     id: 2,
-    type: 'video', 
-    thumbnail: '/api/placeholder/400/500',
-    caption: 'Beard trim perfection ✂️ Shape up and line work',
+    type: 'image', 
+    thumbnail: '/cut2.png',
+    caption: 'Expert fade technique ✂️ Perfect blend and sharp lines',
     likes: 35,
     comments: 5,
     videoUrl: '#',
-    isVideo: true
+    isVideo: false
   },
   {
     id: 3,
-    type: 'video',
-    thumbnail: '/api/placeholder/500/400', 
-    caption: 'Classic cut with modern style 💯 Always delivering quality',
+    type: 'image',
+    thumbnail: '/cut3.png', 
+    caption: 'Classic taper cut with modern twist 💯 Always delivering quality',
     likes: 62,
     comments: 12,
     videoUrl: '#',
-    isVideo: true
+    isVideo: false
   }
 ];
 
@@ -84,38 +84,36 @@ export default function InstagramCarousel() {
           <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
             {/* Post Content */}
             <div className="aspect-square relative">
-              {/* Video Placeholder */}
-              <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black flex flex-col items-center justify-center text-white">
+              {/* Actual Cut Image */}
+              <img 
+                src={currentPost.thumbnail}
+                alt={currentPost.caption}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback if image doesn't load
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.style.setProperty('display', 'flex');
+                }}
+              />
+              
+              {/* Fallback placeholder */}
+              <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black flex-col items-center justify-center text-white hidden">
                 <div className="text-center">
-                  <div className="text-6xl mb-4">🎬</div>
-                  <h3 className="text-xl font-semibold mb-2">Pinned Video {currentIndex + 1}</h3>
+                  <div className="text-6xl mb-4">✂️</div>
+                  <h3 className="text-xl font-semibold mb-2">Cut #{currentIndex + 1}</h3>
                   <p className="text-gray-400 text-sm mb-6 max-w-sm px-4">
                     {currentPost.caption}
                   </p>
-                  
-                  {/* Play Button */}
-                  <button 
-                    onClick={() => setIsPlaying(!isPlaying)}
-                    className="bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 rounded-full p-4 hover:bg-opacity-30 transition-all duration-300"
-                  >
-                    {isPlaying ? (
-                      <div className="w-6 h-6 flex items-center justify-center">
-                        <div className="w-1 h-4 bg-white mr-1"></div>
-                        <div className="w-1 h-4 bg-white"></div>
-                      </div>
-                    ) : (
-                      <div className="w-6 h-6 flex items-center justify-center">
-                        <div className="w-0 h-0 border-l-4 border-l-white border-t-2 border-b-2 border-t-transparent border-b-transparent ml-1"></div>
-                      </div>
-                    )}
-                  </button>
                 </div>
               </div>
 
-              {/* Video Icon Overlay */}
+              {/* Instagram-style overlay */}
               <div className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-lg px-2 py-1">
-                <div className="text-white text-sm">🎥</div>
+                <div className="text-white text-sm">📷</div>
               </div>
+              
+              {/* Instagram-style gradient overlay at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent h-24 pointer-events-none"></div>
             </div>
 
             {/* Post Info */}

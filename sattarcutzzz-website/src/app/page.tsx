@@ -2,6 +2,7 @@ import Image from "next/image";
 import MobileMenu from "@/components/MobileMenu";
 import MovingReviewsCarousel from "@/components/MovingReviewsCarousel";
 import InstagramCarousel from "@/components/InstagramCarousel";
+import CutsGallery from "@/components/CutsGallery";
 
 export default function Home() {
   return (
@@ -98,6 +99,9 @@ export default function Home() {
 
       {/* Instagram Posts Section */}
       <InstagramCarousel />
+
+      {/* Cuts Gallery Section */}
+      <CutsGallery />
 
       {/* Reviews Section */}
       <section id="reviews" className="py-20 bg-black">
