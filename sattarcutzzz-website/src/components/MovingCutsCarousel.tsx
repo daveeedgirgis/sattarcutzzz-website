@@ -152,10 +152,15 @@ export default function MovingCutsCarousel() {
         </div>
 
         <div className="text-center mt-8">
-          <div className="flex justify-center items-center gap-2 text-gray-400">
-            <span className="text-xl">📱</span>
-            <span>Follow @sattarcutzzz for more</span>
-          </div>
+          <a 
+            href="https://www.instagram.com/sattarcutzzz" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+          >
+            <span className="text-xl">📸</span>
+            <span>Check us out on Instagram @sattarcutzzz</span>
+          </a>
         </div>
       </div>
     </section>
