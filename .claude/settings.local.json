@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:montanafades.com)",
+      "WebFetch(domain:sattarcutzzz.setmore.com)",
+      "WebFetch(domain:sattarcutzzz.setmore.com)",
+      "WebFetch(domain:www.instagram.com)",
+      "Bash(git init:*)",
+      "Bash(npx create-next-app:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install)",
+      "Bash(mv:*)",
+      "Bash(cp:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git -C .. status)",
+      "Bash(git -C ../sattarCutZZZ status)",
+      "Bash(git -C ../sattarCutZZZ remote -v)",
+      "Bash(npm run build:*)",
+      "Bash(git -C .. add .)"
+    ],
+    "deny": []
+  }
+}

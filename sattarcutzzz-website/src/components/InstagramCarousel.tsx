@@ -89,7 +89,10 @@ export default function InstagramCarousel() {
                 onError={(e) => {
                   // Fallback if image doesn't load
                   e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling?.style.setProperty('display', 'flex');
+                  const nextEl = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (nextEl) {
+                    nextEl.style.display = 'flex';
+                  }
                 }}
               />
               
